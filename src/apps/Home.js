@@ -10,8 +10,9 @@ import { Actions } from 'react-native-router-flux';
 class Home extends Component {
   render() {
     const goToFileList = () => Actions.FileList({text: '浏览文件'});
+    const goToNetworkInfo = () => Actions.NetworkInfo({text: '当前网络状态'});
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, marginTop: 75}}>
         <TouchableHighlight style={style.touchable}>
           <Text style={{
             fontSize: 20,
@@ -21,6 +22,15 @@ class Home extends Component {
             paddingTop: 5
           }} onPress={goToFileList}>文件管理器</Text>
         </TouchableHighlight>
+        <TouchableHighlight style={style.touchable}>
+          <Text style={{
+            fontSize: 20,
+            color: 'white',
+            justifyContent: 'center',
+            textAlign: 'center',
+            paddingTop: 5
+          }} onPress={goToNetworkInfo}>网络状态</Text>
+        </TouchableHighlight>
       </View>
     )
   }
@@ -28,7 +38,7 @@ class Home extends Component {
 
 const style = StyleSheet.create({
   touchable: {
-    margin: 75,
+    marginTop: 20,
     width: 120,
     height: 40,
     borderRadius: 15,
