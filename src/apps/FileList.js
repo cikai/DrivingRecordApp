@@ -5,15 +5,7 @@ import {
   Button
 } from 'react-native';
 
-import api from '../utilities/api';
-
 class FileList extends Component {
-  componentWillMount() {
-    api.getFileList().then((res) => {
-      console.log(res);
-    });
-  }
-
   render() {
     return (
       <View>

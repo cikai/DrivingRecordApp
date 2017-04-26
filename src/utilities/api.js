@@ -1,5 +1,3 @@
-var fetch = require('node-fetch');
-
 var URL = 'http://192.168.1.254/';
 
 var api = {

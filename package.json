@@ -7,13 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "node-fetch": "^1.6.3",
-    "react": "16.0.0-alpha.6",
-    "react-native": "0.43.4",
-    "react-native-elements": "^0.11.1",
-    "react-native-router-flux": "^3.38.1",
-    "react-native-vector-icons": "^4.0.1",
-    "react-navigation": "^1.0.0-beta.7"
+    "react-native-router-flux": "^3.38.1"
   },
   "devDependencies": {
     "babel-jest": "19.0.0",
