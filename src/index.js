@@ -1,20 +1,84 @@
-import React, { Component } from 'react';
-import { Router, Scene } from 'react-native-router-flux';
+/**
+ * Created by cikai on 17-4-27.
+ */
+import React, {Component} from "react";
+import {
+  AppRegistry,
+  View,
+  Text,
+  StyleSheet,
+  Image
+} from "react-native";
+import {
+  Navigation,
+  Scene,
+  Router
+} from 'react-native-router-flux';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Home from './apps/Home';
 import FileList from './apps/FileList';
 import NetworkInfo from './apps/NetworkInfo';
 
-export default class App extends Component {
+class TabBar extends Component {
+  constructor(props) {
+    super(props);
+    this.data = {
+      Home: {
+        title: "首页",
+        icon: "home",
+      },
+      FileList: {
+        title: "文件",
+        icon: "th-large",
+      },
+      NetworkInfo: {
+        title: "网络",
+        icon: "shopping-cart",
+      }
+    }
+  }
+
   render() {
-    return (
-      <Router>
-        <Scene key="root">
-          <Scene key="Home" component={Home} title="首页" initial={true} />
-          <Scene key="FileList" component={FileList} title="文件管理器" />
-          <Scene key="NetworkInfo" component={NetworkInfo} title="网络状态" />
-        </Scene>
-      </Router>
-    );
+    let param = this.data[this.props.sceneKey];
+    let activeStyle = this.props.selected ? {color: "#3399FF"} : {};
+    return <View>
+      <Icon name={param.icon} color={activeStyle.color} size={25}/>
+      <Text style={[activeStyle, styles.tabbarItem]}>{param.title}</Text>
+    </View>
   }
 }
+
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const iconSize = 30;
+    return (
+      <Router>
+        {/*下部导航开始*/}
+        <Scene key="tabbar" name="tabbar" duration={0} tabs={true} style={styles.tabbarContainer} initial={true}>
+          <Scene key="Home" duration={0} component={Home} hideNavBar={true} title="首页" icon={TabBar}/>
+          <Scene key="FileList" duration={0} component={FileList} hideNavBar={true} title="文件" icon={TabBar}/>
+          <Scene key="NetworkInfo" duration={0} component={NetworkInfo} hideNavBar={true} title="网络" icon={TabBar}/>
+        </Scene>
+        {/*下部导航结束*/}
+      </Router>
+    )
+  }
+}
+
+const styles = StyleSheet.create({
+  tabbarContainer: {
+    flex: 1,
+    backgroundColor: "#f6f6f6",
+  },
+  tabbarItem: {
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    marginLeft: -3
+  }
+})

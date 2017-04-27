@@ -38,7 +38,7 @@ class Home extends Component {
 
 const style = StyleSheet.create({
   touchable: {
-    marginTop: 20,
+    margin: 10,
     width: 120,
     height: 40,
     borderRadius: 15,

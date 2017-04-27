@@ -21,7 +21,7 @@ class NetworkInfo extends Component {
   render() {
     return (
       <View>
-        <Text style={{paddingTop: 60,paddingLeft: 10,fontSize: 20}}>当前网络：{this.state.status}</Text>
+        <Text style={{margin: 10,fontSize: 20}}>当前网络：{this.state.status}</Text>
       </View>
     );
   }
