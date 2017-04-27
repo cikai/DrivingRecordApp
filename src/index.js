@@ -30,11 +30,11 @@ class TabBar extends Component {
       },
       FileList: {
         title: "文件",
-        icon: "th-large",
+        icon: "list",
       },
       NetworkInfo: {
         title: "网络",
-        icon: "shopping-cart",
+        icon: "wifi",
       }
     }
   }
