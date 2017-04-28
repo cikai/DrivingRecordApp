@@ -17,7 +17,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Home from './apps/Home';
-import FileList from './apps/FileList';
+import Forecast from './apps/Forecast';
 import NetworkInfo from './apps/NetworkInfo';
 
 class TabBar extends Component {
@@ -28,9 +28,9 @@ class TabBar extends Component {
         title: "首页",
         icon: "home",
       },
-      FileList: {
-        title: "文件",
-        icon: "list",
+      Forecast: {
+        title: "天气",
+        icon: "bolt",
       },
       NetworkInfo: {
         title: "网络",
@@ -61,7 +61,7 @@ export default class App extends Component {
         {/*下部导航开始*/}
         <Scene key="tabbar" name="tabbar" duration={0} tabs={true} style={styles.tabbarContainer} initial={true}>
           <Scene key="Home" duration={0} component={Home} hideNavBar={true} title="首页" icon={TabBar}/>
-          <Scene key="FileList" duration={0} component={FileList} hideNavBar={true} title="文件" icon={TabBar}/>
+          <Scene key="Forecast" duration={0} component={Forecast} hideNavBar={true} title="天气" icon={TabBar}/>
           <Scene key="NetworkInfo" duration={0} component={NetworkInfo} hideNavBar={true} title="网络" icon={TabBar}/>
         </Scene>
         {/*下部导航结束*/}
