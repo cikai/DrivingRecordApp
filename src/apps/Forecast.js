@@ -2,9 +2,8 @@ import React, {Component} from 'react';
 import {
   View,
   Text,
-  Button,
   StyleSheet,
-  TouchableHighlight
+  TouchableOpacity
 } from 'react-native';
 
 var parseString = require('react-native-xml2js').parseString;
@@ -33,7 +32,7 @@ class Forecast extends Component {
     return (
       <View style={style.body}>
         <Text style={{padding: 75, fontSize: 25}}>{this.props.text}</Text>
-        <TouchableHighlight style={style.button}>
+        <TouchableOpacity style={style.button}>
           <Text style={{
             fontSize: 20,
             color: 'white',
@@ -41,7 +40,7 @@ class Forecast extends Component {
             textAlign: 'center',
             paddingTop: 5
           }} onPress={this.getForecast.bind(this)}>更  新</Text>
-        </TouchableHighlight>
+        </TouchableOpacity>
         <Text style={{fontSize: 25}}>{this.state.city}</Text>
         <Text style={{fontSize: 25}}>{this.state.wendu}</Text>
       </View>

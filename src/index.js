@@ -3,11 +3,9 @@
  */
 import React, {Component} from "react";
 import {
-  AppRegistry,
   View,
   Text,
-  StyleSheet,
-  Image
+  StyleSheet
 } from "react-native";
 import {
   Navigation,
@@ -55,16 +53,13 @@ export default class App extends Component {
   }
 
   render() {
-    const iconSize = 30;
     return (
       <Router>
-        {/*下部导航开始*/}
         <Scene key="tabbar" name="tabbar" duration={0} tabs={true} style={styles.tabbarContainer} initial={true}>
           <Scene key="Home" duration={0} component={Home} hideNavBar={true} title="首页" icon={TabBar}/>
           <Scene key="Forecast" duration={0} component={Forecast} hideNavBar={true} title="天气" icon={TabBar}/>
           <Scene key="NetworkInfo" duration={0} component={NetworkInfo} hideNavBar={true} title="网络" icon={TabBar}/>
         </Scene>
-        {/*下部导航结束*/}
       </Router>
     )
   }
