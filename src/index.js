@@ -15,6 +15,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Home from './apps/Home';
+import Capture from './apps/Capture';
 import Forecast from './apps/Forecast';
 import NetworkInfo from './apps/NetworkInfo';
 
@@ -26,9 +27,9 @@ class TabBar extends Component {
         title: "首页",
         icon: "home",
       },
-      Forecast: {
-        title: "天气",
-        icon: "bolt",
+      Capture: {
+        title: "拍照",
+        icon: "camera",
       },
       NetworkInfo: {
         title: "网络",
@@ -57,8 +58,9 @@ export default class App extends Component {
       <Router>
         <Scene key="tabbar" name="tabbar" duration={0} tabs={true} style={styles.tabbarContainer} initial={true}>
           <Scene key="Home" duration={0} component={Home} hideNavBar={true} title="首页" icon={TabBar}/>
-          <Scene key="Forecast" duration={0} component={Forecast} hideNavBar={true} title="天气" icon={TabBar}/>
+          <Scene key="Capture" duration={0} component={Capture} hideNavBar={true} title="拍照" icon={TabBar}/>
           <Scene key="NetworkInfo" duration={0} component={NetworkInfo} hideNavBar={true} title="网络" icon={TabBar}/>
+          <Scene key="Forecast" duration={0} component={Forecast} hideNavBar={true} title="天气"/>
         </Scene>
       </Router>
     )

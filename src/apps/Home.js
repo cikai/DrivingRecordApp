@@ -12,7 +12,7 @@ class Home extends Component {
     const goToForecast = () => Actions.Forecast({text: '天气'});
     const goToNetworkInfo = () => Actions.NetworkInfo({text: '当前网络状态'});
     return (
-      <View style={{flex: 1, marginTop: 75}}>
+      <View style={style.body}>
         <TouchableHighlight style={style.touchable}>
           <Text style={{
             fontSize: 20,
@@ -32,12 +32,16 @@ class Home extends Component {
           }} onPress={goToNetworkInfo}>网络状态</Text>
         </TouchableHighlight>
       </View>
-
     )
   }
 }
 
 const style = StyleSheet.create({
+  body: {
+    flex: 1,
+    marginTop: 75
+
+  },
   touchable: {
     margin: 10,
     width: 120,
