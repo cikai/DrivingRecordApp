@@ -8,10 +8,18 @@ import {
   ToastAndroid,
   Button
 } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import wifi from 'react-native-android-wifi';
 
 class NetworkInfo extends Component {
+  static navigationOptions = {
+    tabBarLabel: '网络',
+    tabBarIcon: ({ tintColor }) => (
+      <Icon name={'wifi'} size={25}/>
+    )
+  };
+
   constructor(props) {
     super(props);
     this.state = {

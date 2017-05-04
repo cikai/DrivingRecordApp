@@ -5,12 +5,17 @@ import {
   StyleSheet,
   TouchableHighlight
 } from 'react-native';
-import { Actions } from 'react-native-router-flux';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 class Home extends Component {
+  static navigationOptions = {
+    tabBarLabel: '首页',
+    tabBarIcon: ({ tintColor }) => (
+      <Icon name={'home'} size={25}/>
+    )
+  };
+
   render() {
-    const goToForecast = () => Actions.Forecast({text: '天气'});
-    const goToNetworkInfo = () => Actions.NetworkInfo({text: '当前网络状态'});
     return (
       <View style={style.body}>
         <TouchableHighlight style={style.touchable}>
@@ -20,7 +25,7 @@ class Home extends Component {
             justifyContent: 'center',
             textAlign: 'center',
             paddingTop: 5
-          }} onPress={goToForecast}>天气</Text>
+          }} onPress={() => this.props.navigation.navigate('Forecast')}>天气</Text>
         </TouchableHighlight>
         <TouchableHighlight style={style.touchable}>
           <Text style={{
@@ -29,7 +34,7 @@ class Home extends Component {
             justifyContent: 'center',
             textAlign: 'center',
             paddingTop: 5
-          }} onPress={goToNetworkInfo}>网络状态</Text>
+          }} onPress={() => this.props.navigation.navigate('NetworkInfo')}>网络状态</Text>
         </TouchableHighlight>
       </View>
     )

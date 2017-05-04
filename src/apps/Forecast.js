@@ -5,10 +5,18 @@ import {
   StyleSheet,
   TouchableOpacity
 } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 var parseString = require('react-native-xml2js').parseString;
 
 class Forecast extends Component {
+  static navigationOptions = {
+    tabBarLabel: '天气',
+    tabBarIcon: ({ tintColor }) => (
+      <Icon name={'umbrella'} size={25}/>
+    )
+  };
+
   constructor(props) {
     super(props);
     this.state = {

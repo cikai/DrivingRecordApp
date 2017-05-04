@@ -13,6 +13,13 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 class Capture extends Component {
+  static navigationOptions = {
+    tabBarLabel: '拍照',
+    tabBarIcon: ({ tintColor }) => (
+      <Icon name={'camera'} size={25}/>
+    )
+  };
+
   constructor(props) {
     super(props);
     this.state = {
