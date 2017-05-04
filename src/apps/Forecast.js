@@ -37,9 +37,10 @@ class Forecast extends Component {
   }
 
   render() {
+    const {state} = this.props.navigation;
+    console.log(state);
     return (
       <View style={style.body}>
-        <Text style={{padding: 75, fontSize: 25}}>{this.props.text}</Text>
         <TouchableOpacity style={style.button}>
           <Text style={{
             fontSize: 20,

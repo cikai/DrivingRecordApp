@@ -11,6 +11,7 @@ import Home from './apps/Home';
 import Capture from './apps/Capture';
 import Forecast from './apps/Forecast';
 import NetworkInfo from './apps/NetworkInfo';
+import Setting from './apps/Setting';
 
 const App = TabNavigator({
   Home: {
@@ -24,13 +25,20 @@ const App = TabNavigator({
   },
   NetworkInfo: {
     screen: NetworkInfo
+  },
+  Settings: {
+    screen: Setting
   }
 }, {
   tabBarComponent: TabBarBottom,
   tabBarPosition: 'bottom',
   swipeEnabled: true,
   animationEnabled: true,
-  lazy: false
+  lazy: true,
+  tabBarOptions: {
+    activeTintColor: 'cornflowerblue',
+    inactiveTintColor: 'gray',
+  }
 });
 
 export default App;
