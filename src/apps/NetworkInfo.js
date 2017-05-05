@@ -72,7 +72,7 @@ class NetworkInfo extends Component {
 
   getWifiInfo (e) {
     if (this.state.type == "WIFI") {
-      var thisx = this;
+      const thisx = this;
       wifi.getSSID((ssid) => {
         thisx.setState({current_ssid: ssid});
       });

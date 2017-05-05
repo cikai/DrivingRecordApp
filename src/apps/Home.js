@@ -10,6 +10,9 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 class Home extends Component {
   static navigationOptions = {
     tabBarLabel: '首页',
+    header: {
+      headerTitle: 'asdf'
+    },
     tabBarIcon: ({ tintColor }) => (
       <Icon name={'home'} size={25}/>
     )
@@ -18,15 +21,6 @@ class Home extends Component {
   render() {
     return (
       <View style={style.body}>
-        <TouchableHighlight style={style.touchable}>
-          <Text style={{
-            fontSize: 20,
-            color: 'white',
-            justifyContent: 'center',
-            textAlign: 'center',
-            paddingTop: 5
-          }} onPress={() => this.props.navigation.navigate('Forecast')}>天气</Text>
-        </TouchableHighlight>
         <TouchableHighlight style={style.touchable}>
           <Text style={{
             fontSize: 20,

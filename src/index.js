@@ -9,7 +9,6 @@ import {
 
 import Home from './apps/Home';
 import Capture from './apps/Capture';
-import Forecast from './apps/Forecast';
 import NetworkInfo from './apps/NetworkInfo';
 import Setting from './apps/Setting';
 
@@ -19,9 +18,6 @@ const App = TabNavigator({
   },
   Capture: {
     screen: Capture
-  },
-  Forecast: {
-    screen: Forecast
   },
   NetworkInfo: {
     screen: NetworkInfo
