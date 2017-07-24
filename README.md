@@ -1,5 +1,7 @@
 ## Driving Record App
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/cikai/DrivingRecordApp.svg)](https://greenkeeper.io/)
+
 To run your app on iOS:
 
 ```bash
